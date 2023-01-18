@@ -2,12 +2,8 @@
 
 declare(strict_types=1);
 
-namespace PragmaGoTech\Interview\Model;
+namespace App\Model;
 
-/**
- * A cut down version of a loan application containing
- * only the required properties for this test.
- */
 class LoanProposal
 {
     private float $amount;
