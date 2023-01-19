@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fee Calculation{% endblock %}
+
+{% block body %}
+<div style="position:fixed; left: 0; top: 0; width: 100vw; height: 100vh; background-color: #93c5fd;">
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column">
+        <div>
+            <h1>Fee Calculator</h1>
+        </div>
+        <div style="display: flex; justify-content: center; flex-direction: column;">
+            {{ form_start(form) }}
+            <div style="display: flex; justify-content: center; flex-direction: column;">
+                <div style="display: flex; justify-content: center; margin-bottom: 5px;">
+                    {{ form_label(form.amount) }} &nbsp; (1000 - 20 000zł.)
+                </div>
+                <div style="display: flex; justify-content: center; margin-bottom: 5px;">
+                    {{ form_widget(form.amount) }}
+                </div>
+                <div style="display: flex; justify-content: center">
+                    {{ form_row(form.submit) }}
+                </div>
+            </div>
+            {{ form_end(form) }}
+        </div>
+        <div style="border: solid 2px black; padding: 8px; margin-top: 20px">
+            <p>{{ fee }} zł.</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
