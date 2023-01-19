@@ -26,6 +26,10 @@ class LoanProposal
 
     /**
      * Method for calculating Fee of Loan
+     *
+     * Jest to wolniejsza opcja ale bardziej uniwersalna w przypadku gdy zmieni się cennik i zamiast co 100zł będzie co 100 zł itp.
+     * Gdyby założyć, że cennik będzie zawsze co 1000 a później wyliczana wartość interpolowana to szybszą opcją było by zaokrąglanie liczby
+     * do odpowiedniej wartości, czyli w tym przypadku trzeba by było zaokrąglić co 1000 raz w dół i raz w górę.
      */
     public function countFee(): float
     {
