@@ -57,6 +57,11 @@ class LoanProposal
             $result = $minAmountFee + ($maxAmountFee - $minAmountFee) * (($this->amount - $minAmount)/($maxAmount - $minAmount));
         }
 
-        return (float) $result;
+        return $this->roundUpToAny($result);
+    }
+
+    function roundUpToAny($n, $x = 5): float
+    {
+        return (ceil($n)%$x === 0) ? ceil($n) : round(($n + $x / 2) / $x) * $x;
     }
 }
